@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ece5dd;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .chat-form-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .chat-form-container h2 {
+            color: #075e54;
+            margin-bottom: 20px;
+        }
+        
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-form label {
+            margin-bottom: 5px;
+            color: #075e54;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .chat-form input, .chat-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .chat-form button {
+            padding: 10px;
+            background-color: #075e54;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .chat-form button:hover {
+            background-color: #064e48;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="chat-form-container">
+        <form action="/chats" method="POST" class="chat-form">
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" required>
+            
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="msg" maxlength="100" required></textarea>
+            
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" required>
+            
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .chat-form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: vertical; /* Allows resizing vertically */
+            height: 100px; /* Default height */
+            width: 100%; /* Full width */
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        </style>
+</head>
+<body>
+    <div class="chat-form-container">
+        <h1>Id is <%=data.id%></h1>
+        <h3>This message was sent from <%=data.from%> to <%=data.to%></h3>
+        <h1>Send a New Message</h1>
+        <form action="/chats/<%=data.id%>?_method=PUT" method="post" class="chat-form">
+            <textarea id="msg" name="msg" maxlength="100" required> <%=data.msg%></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
